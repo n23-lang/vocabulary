@@ -68,7 +68,7 @@ button.bd{border:none;cursor:pointer;color:var(--tx);font-family:inherit}button.
 .mode{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}.orow{display:flex;gap:8px;align-items:center}.orow .oc{flex:1}.pb.ok .sp{pointer-events:auto}.b:hover:not(:disabled){border-color:var(--pr);box-shadow:0 0 0 2px rgba(59,82,227,.25)}.b:not(.blue):not(.pk):not(.kn):hover:not(:disabled){background:rgba(59,82,227,.12)}.b.blue:hover:not(:disabled){filter:brightness(1.12)}.b:active:not(:disabled){background:var(--pr);color:#fff;border-color:var(--pr)}.tabs button:hover:not(.on),.pt2 button:hover:not(.on){background:rgba(59,82,227,.12);color:var(--tx)}.exg div:hover:not(.on){border-color:var(--pr);background:rgba(59,82,227,.08)}.tg:hover{box-shadow:0 0 0 2px rgba(59,82,227,.35)}.sp:hover{background:rgba(59,82,227,.12);border-radius:50%}.oc:hover:not(.ok):not(.bad):not(:disabled){border-color:var(--pr);background:rgba(59,82,227,.08)}.pb:hover:not(.ok){border-color:var(--pr)}.mic:hover{filter:brightness(1.12)}select:hover{border-color:var(--pr)}.mode .b:hover:not(.blue){background:rgba(59,82,227,.15);border-color:var(--pr)}
 @media(max-width:700px){.sg{grid-template-columns:repeat(2,1fr)}.two,.pf{grid-template-columns:1fr}.ws{padding:20px 16px}}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script></head>
+</head>
 <body>
 <div class="wrap">
   <div class="top"><h1 id="ttl" title="Click to rename" style="cursor:pointer" onclick="editTitle()"><span class="o">Olena's</span> <span class="u">Phrase Cards</span></h1><div style="display:flex;gap:8px;align-items:center"><button class="tg" onclick="editTitle()" aria-label="Rename" title="Rename">✏️</button><button class="tg" onclick="theme()" aria-label="Toggle theme">🌓</button></div></div>
@@ -326,7 +326,7 @@ async function exportPage(){
   h=h.replace(/const K='[^']*';/,()=>"const K='phrase_cards_"+slug+"';");
   h=h.replace(/const SEED=[\s\S]*?,SEED_VER=\d+;/,()=>'const SEED='+seed+',SEED_VER='+Date.now()+';');
   h=h.replace(/<title>[\s\S]*?<\/title>/,()=>'<title>'+esc(name)+'</title>');
-  h=h.split("S.title||"Olena's Phrase Cards"").join('S.title||'+JSON.stringify(name));
+  h=h.split("S.title||"+"'Phrase cards'").join('S.title||'+JSON.stringify(name));
   h=h.replace(/(<script type="application\/json" id="audioData">)[\s\S]*?(<\/script>)/,(m,x,y)=>x+JSON.stringify(use)+y);
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([h],{type:'text/html'}));a.download=slug+'.html';document.body.appendChild(a);a.click();a.remove();
   const mb=(h.length/1048576).toFixed(1);msg.textContent='Saved '+slug+'.html with '+words.length+' phrases ('+mb+' MB).'+(h.length>24*1048576?' Warning: GitHub’s website upload limit is 25 MB, so split this student into two pages.':'');btn.disabled=btn2.disabled=false}
