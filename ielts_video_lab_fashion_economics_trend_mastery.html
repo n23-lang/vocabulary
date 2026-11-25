@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Video Lab: Fashion Economics &amp; Trend Mastery</title>
+  <style>
+    /* =========================================================================
+       1. BASE RESET & FULL-WIDTH FLUID LAYOUT (GITHUB PAGES & MOBILE READY)
+    ========================================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .app-shell {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* =========================================================================
+       2. STICKY FULL-BLEED HEADER & 5-TAB NAVIGATION
+    ========================================================================= */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #cbd5e1;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+      padding: 12px 24px;
+    }
+
+    .topbar-inner {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .pill-navy { background: #e0e7ff; color: #1e3a8a; border: 1px solid #c7d2fe; }
+    .pill-blue { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .pill-teal { background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4; }
+    .pill-amber { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .pill-crimson { background: #ffe4e6; color: #be123c; border: 1px solid #fecdd3; }
+
+    h1.app-title {
+      margin: 0 0 2px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+
+    p.app-subtitle {
+      margin: 0;
+      font-size: 13px;
+      color: #475569;
+    }
+
+    .status-chip {
+      padding: 6px 14px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+      white-space: nowrap;
+    }
+
+    .tab-nav {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      border-radius: 10px;
+      padding: 9px 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.16s ease;
+    }
+
+    .tab-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .tab-btn.active {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25);
+    }
+
+    /* =========================================================================
+       3. FULL-WIDTH CONTENT CONTAINERS & GRIDS
+    ========================================================================= */
+    .main-content {
+      width: 100%;
+      padding: 20px 24px 44px;
+      flex: 1;
+    }
+
+    .tab-panel {
+      display: none;
+      width: 100%;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .section-card {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    h2.section-title {
+      margin: 4px 0 4px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    p.section-desc {
+      margin: 0;
+      font-size: 13px;
+      color: #475569;
+    }
+
+    .grid-4 {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .grid-3 {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .grid-2 {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .video-studio-layout {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .item-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h3.card-title {
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* =========================================================================
+       4. INTERACTIVE YOUTUBE VIDEO PLAYER, SUBTITLES & WORD POPOVER
+    ========================================================================= */
+    .video-sticky-col {
+      position: sticky;
+      top: 118px;
+    }
+
+    .player-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #0f172a;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+    }
+
+    .player-wrapper iframe,
+    .player-wrapper #ytPlayerTarget {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .player-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+
+    .control-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toggle-pill {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #334155;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .toggle-pill.active-on {
+      background: #0d9488;
+      border-color: #0d9488;
+      color: #ffffff;
+    }
+
+    .toggle-pill.active-blur {
+      background: #d97706;
+      border-color: #d97706;
+      color: #ffffff;
+    }
+
+    .toggle-pill.active-off {
+      background: #475569;
+      border-color: #475569;
+      color: #ffffff;
+    }
+
+    /* Active Subtitle Stage Box */
+    .subtitle-stage {
+      margin-top: 12px;
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 14px;
+      padding: 16px;
+      border: 1px solid #334155;
+    }
+
+    .subtitle-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    .subtitle-text {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.75;
+      color: #ffffff;
+      transition: filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    .subtitle-text.mode-blur {
+      filter: blur(5px);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .subtitle-text.mode-blur:hover,
+    .subtitle-text.mode-blur.revealed {
+      filter: none;
+    }
+
+    .subtitle-text.mode-off {
+      display: none;
+    }
+
+    .subtitle-hidden-notice {
+      display: none;
+      font-size: 13px;
+      font-style: italic;
+      color: #94a3b8;
+    }
+
+    .subtitle-hidden-notice.show {
+      display: block;
+    }
+
+    .vocab-token {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.18);
+      color: #7dd3fc;
+      border-bottom: 2px dashed #38bdf8;
+      border-radius: 5px;
+      padding: 0 5px;
+      margin: 0 1px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.15s ease;
+    }
+
+    .vocab-token:hover,
+    .vocab-token.selected {
+      background: #0284c7;
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+
+    /* Instant Vocabulary Inspector Card */
+    .vocab-inspector {
+      margin-top: 12px;
+      background: #eff6ff;
+      border: 1px solid #93c5fd;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .vocab-inspector-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 12.5px;
+    }
+
+    .vocab-detail-cell {
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 9px;
+      padding: 8px 10px;
+    }
+
+    /* Timeline Cue Cards */
+    .cue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cue-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 14px;
+      transition: all 0.16s ease;
+    }
+
+    .cue-card.active-cue {
+      background: #eff6ff;
+      border: 2px solid #1d4ed8;
+      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.12);
+    }
+
+    .cue-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 7px;
+      padding: 3px 9px;
+      font-size: 11.5px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      cursor: pointer;
+    }
+
+    .time-badge:hover {
+      background: #1d4ed8;
+    }
+
+    .gap-sentence {
+      font-size: 13.5px;
+      color: #1e293b;
+      line-height: 1.85;
+      margin: 6px 0 0;
+    }
+
+    /* =========================================================================
+       5. SVG FRAMES, QUOTE BOXES & FORM CONTROLS
+    ========================================================================= */
+    .svg-frame {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    .svg-frame svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .quote-box {
+      background: #ffffff;
+      border-left: 3px solid #1d4ed8;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 12.5px;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .quote-label {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #1d4ed8;
+      margin-bottom: 2px;
+    }
+
+    .ielts-box {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 12.5px;
+      color: #064e3b;
+    }
+
+    .ielts-label {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #047857;
+      margin-bottom: 2px;
+    }
+
+    select, input[type="text"], textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 13px;
+      color: #0f172a;
+      background: #ffffff;
+      border: 1px solid #94a3b8;
+      border-radius: 9px;
+      padding: 8px 10px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    select:focus, input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: #1d4ed8;
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+    }
+
+    .inline-input {
+      display: inline-block;
+      width: 150px;
+      padding: 4px 8px;
+      margin: 2px 3px;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #ffffff;
+      border: 1.5px solid #60a5fa;
+      border-radius: 7px;
+    }
+
+    .inline-input.correct {
+      background: #dcfce7;
+      border-color: #16a34a;
+      color: #14532d;
+    }
+
+    .inline-input.wrong {
+      background: #ffe4e6;
+      border-color: #e11d48;
+      color: #881337;
+    }
+
+    .btn-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-sm {
+      padding: 5px 11px;
+      font-size: 12px;
+      border-radius: 8px;
+    }
+
+    .btn-primary { background: #1d4ed8; color: #ffffff; }
+    .btn-primary:hover { background: #1e40af; }
+
+    .btn-navy { background: #0f172a; color: #ffffff; }
+    .btn-navy:hover { background: #1e293b; }
+
+    .btn-amber { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+    .btn-amber:hover { background: #fde68a; }
+
+    .btn-teal { background: #0d9488; color: #ffffff; }
+    .btn-teal:hover { background: #0f766e; }
+
+    .btn-ghost { background: #f1f5f9; color: #334155; border-color: #cbd5e1; }
+    .btn-ghost:hover { background: #e2e8f0; }
+
+    .feedback-box {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .feedback-box.show { display: block; }
+    .fb-success { background: #dcfce7; border: 1px solid #86efac; color: #14532d; }
+    .fb-warning { background: #fef3c7; border: 1px solid #fcd34d; color: #78350f; }
+    .fb-error { background: #ffe4e6; border: 1px solid #fda4af; color: #881337; }
+
+    .model-box {
+      display: none;
+      margin-top: 14px;
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .model-box.show { display: block; }
+
+    .model-essay p {
+      margin: 0 0 10px;
+      font-size: 13.5px;
+      color: #1e293b;
+      line-height: 1.65;
+    }
+
+    .model-essay p:last-child { margin-bottom: 0; }
+
+    .timer-display {
+      font-size: 26px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: #1d4ed8;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 8px 16px;
+      display: inline-block;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #334155;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .stage-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    /* =========================================================================
+       6. RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+    ========================================================================= */
+    @media (max-width: 1120px) {
+      .video-studio-layout { grid-template-columns: 1fr; }
+      .video-sticky-col { position: static; }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tab-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .topbar { padding: 10px 12px; }
+      .main-content { padding: 12px 12px 30px; }
+      h1.app-title { font-size: 16.5px; }
+      .tab-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+      .tab-btn { font-size: 11.5px; padding: 8px 6px; }
+      .grid-4, .grid-3, .grid-2, .checklist-grid, .vocab-inspector-grid { grid-template-columns: 1fr; }
+      .section-card { padding: 14px; }
+      .inline-input { width: 130px; }
+      .subtitle-text { font-size: 14.5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ===================================================================
+         STICKY FULL-WIDTH HEADER & 5-STAGE NAVIGATION
+    ==================================================================== -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div>
+          <div class="badge-row">
+            <span class="pill pill-navy">IELTS Academic • Video &amp; Task 1 Lab</span>
+            <span class="pill pill-blue">Auto-Pause Video + Clickable Subtitles</span>
+            <span class="pill pill-teal">CNBC: How Cheap Clothing Got So Expensive</span>
+          </div>
+          <h1 class="app-title">IELTS Video Lab: Fashion Economics &amp; Trend Mastery</h1>
+          <p class="app-subtitle">Watch with auto-pausing cues, click words for instant translation &amp; IELTS synonyms, complete listening gap-fills, and write Task 1 essays.</p>
+        </div>
+        <div class="status-chip" id="globalProgressBadge">Tab 1 of 5 • Interactive Video Lab</div>
+      </div>
+
+      <nav class="tab-nav" role="tablist" aria-label="IELTS Practice Tabs">
+        <button type="button" class="tab-btn active" data-target="tab-1">1. Video Player &amp; Listening Lab</button>
+        <button type="button" class="tab-btn" data-target="tab-2">2. Visual Vocabulary &amp; Charts</button>
+        <button type="button" class="tab-btn" data-target="tab-3">3. Grammar, Synonyms &amp; Precision</button>
+        <button type="button" class="tab-btn" data-target="tab-4">4. Speaking &amp; Writing Studio</button>
+        <button type="button" class="tab-btn" data-target="tab-5">5. Homework: Parallel Task 1</button>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- =================================================================
+           TAB 1: INTERACTIVE VIDEO PLAYER & LISTENING LAB
+      ================================================================== -->
+      <section id="tab-1" class="tab-panel active">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-blue">Interactive Video Studio • 8 Key IELTS Cues</span>
+              <h2 class="section-title">Watch, Auto-Pause at Key Moments, Click Words &amp; Fill In What You Hear</h2>
+              <p class="section-desc">Click <strong>Play Clip</strong> on any cue. With <strong>Auto-Pause: ON</strong>, the video pauses automatically at the end of the phrase so you can inspect vocabulary and complete the listening gap-fill.</p>
+            </div>
+            <div class="status-chip" id="listeningScoreChip">Listening Score: 0 / 8</div>
+          </div>
+
+          <div class="video-studio-layout">
+            <!-- LEFT STICKY COLUMN: YOUTUBE PLAYER, CONTROLS, SUBTITLES & VOCAB INSPECTOR -->
+            <div class="video-sticky-col">
+              <div class="player-wrapper">
+                <div id="ytPlayerTarget"></div>
+              </div>
+
+              <!-- Player Control Toolbar -->
+              <div class="player-controls-bar">
+                <div class="control-group">
+                  <button type="button" class="btn btn-primary btn-sm" onclick="playActiveCue()">&#9654; Play Clip</button>
+                  <button type="button" class="btn btn-ghost btn-sm" onclick="replayActiveCue()">&#8634; Replay</button>
+                  <button type="button" class="btn btn-teal btn-sm" onclick="continueVideo()">Continue Video &#9654;&#9654;</button>
+                  <button type="button" class="btn btn-navy btn-sm" onclick="nextCue()">Next Cue &rarr;</button>
+                </div>
+
+                <div class="control-group">
+                  <button type="button" id="autoPauseBtn" class="toggle-pill active-on" onclick="toggleAutoPause()">Auto-Pause at Cues: ON</button>
+                  <button type="button" id="subModeBtn" class="toggle-pill active-on" onclick="cycleSubtitleMode()">Subtitles: ON</button>
+                </div>
+              </div>
+
+              <!-- Active Cue Interactive Subtitles Box -->
+              <div class="subtitle-stage">
+                <div class="subtitle-header">
+                  <span id="activeCueLabel" style="font-weight:800;color:#38bdf8;">CUE 1 OF 8 • 00:31 – 00:46</span>
+                  <span>Click any highlighted blue word for translation &amp; IELTS synonym</span>
+                </div>
+                <div id="activeSubtitleText" class="subtitle-text"></div>
+                <div id="subtitleHiddenNotice" class="subtitle-hidden-notice">
+                  Subtitles are hidden (OFF). Listen carefully to the clip, complete the gap-fill on the right, or switch Subtitles to BLUR / ON.
+                </div>
+              </div>
+
+              <!-- Instant Clickable Word Dictionary Card -->
+              <div class="vocab-inspector" id="vocabInspectorBox">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+                  <div>
+                    <span class="pill pill-blue" style="margin-bottom:4px;">Instant Word Inspector</span>
+                    <h3 class="card-title" id="inspWordTitle" style="margin:2px 0 0;font-size:16px;color:#1e3a8a;">
+                      Click any blue underlined word in the subtitles above!
+                    </h3>
+                  </div>
+                  <span id="inspPosBadge" class="pill pill-navy">Interactive Dictionary</span>
+                </div>
+                <div class="vocab-inspector-grid" id="inspDetailsGrid">
+                  <div class="vocab-detail-cell">
+                    <strong style="color:#1d4ed8;display:block;font-size:11px;text-transform:uppercase;">English Meaning</strong>
+                    <span id="inspMeaning">Tap a highlighted phrase (e.g., <em>plummeted</em>, <em>soared</em>, <em>value-sensitive customer</em>) to see its definition.</span>
+                  </div>
+                  <div class="vocab-detail-cell">
+                    <strong style="color:#0f766e;display:block;font-size:11px;text-transform:uppercase;">Ukrainian Translation</strong>
+                    <span id="inspUkrainian">Миттєвий переклад українською з&rsquo;явиться тут.</span>
+                  </div>
+                  <div class="vocab-detail-cell">
+                    <strong style="color:#b45309;display:block;font-size:11px;text-transform:uppercase;">IELTS Academic Replacement</strong>
+                    <span id="inspIelts">Band 8.0 academic synonym for Task 1 &amp; Speaking.</span>
+                  </div>
+                  <div class="vocab-detail-cell">
+                    <strong style="color:#be123c;display:block;font-size:11px;text-transform:uppercase;">Grammar &amp; Usage Note</strong>
+                    <span id="inspGrammar">Prepositions, tense, or countable/uncountable tip.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: 8 TIMESTAMPED LISTENING GAP-FILL CARDS -->
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                <h3 class="card-title" style="margin:0;">Clip-by-Clip Listening Gap-Fill (8 Cues)</h3>
+                <span style="font-size:12px;color:#475569;">Type the missing word(s) heard in each clip</span>
+              </div>
+
+              <div class="cue-list" id="cueListContainer"></div>
+
+              <div class="btn-bar">
+                <button type="button" class="btn btn-primary" onclick="checkAllListeningCues()">Check</button>
+                <button type="button" class="btn btn-amber" onclick="showAllListeningAnswers()">Show Answers</button>
+                <button type="button" class="btn btn-ghost" onclick="resetAllListeningCues()">Start Again</button>
+                <span id="listeningGlobalMsg" style="font-size:12.5px;font-weight:700;color:#1d4ed8;margin-left:auto;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-footer">
+          <span style="font-size:13px;color:#475569;font-weight:600;">Finished the video listening clips? Move to Tab 2 to connect video phrases to IELTS visual charts.</span>
+          <button type="button" class="btn btn-navy" onclick="switchTab('tab-2')">Next: Visual Vocabulary &amp; Charts &rarr;</button>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           TAB 2: VISUAL VOCABULARY & CHART TYPES
+      ================================================================== -->
+      <section id="tab-2" class="tab-panel">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-blue">Part 2A • IELTS Visual Identification</span>
+              <h2 class="section-title">The 4 IELTS Chart Types Featured in the Fashion Economics Video</h2>
+              <p class="section-desc">Use these exact chart names and opening structures in your IELTS Academic Writing Task 1 introduction.</p>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="item-card">
+              <div>
+                <div class="svg-frame">
+                  <svg viewBox="0 0 220 90" aria-label="Line graph diagram">
+                    <line x1="22" y1="74" x2="205" y2="74" stroke="#94a3b8" stroke-width="1.5" />
+                    <line x1="22" y1="14" x2="22" y2="74" stroke="#94a3b8" stroke-width="1.5" />
+                    <polyline fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" points="28,64 72,56 118,46 162,28 198,18" />
+                    <circle cx="198" cy="18" r="4" fill="#1d4ed8" />
+                  </svg>
+                </div>
+                <h3 class="card-title">1. Line Graph (Line Chart)</h3>
+                <p style="font-size:12.5px;color:#475569;margin:0 0 8px;">Shows continuous trends over time (e.g., Apparel CPI and fiber unit prices from 2010 to 2026).</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">IELTS Opening Formula</span>
+                <em>&ldquo;The line graph illustrates changes in... over a 16-year period.&rdquo;</em>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <div class="svg-frame">
+                  <svg viewBox="0 0 220 90" aria-label="Pie and donut chart diagram">
+                    <circle cx="70" cy="45" r="30" fill="#0d9488" />
+                    <path d="M 70 45 L 70 15 A 30 30 0 1 1 52 69 Z" fill="#1d4ed8" />
+                    <circle cx="152" cy="45" r="24" fill="none" stroke="#e2e8f0" stroke-width="11" />
+                    <circle cx="152" cy="45" r="24" fill="none" stroke="#d97706" stroke-width="11" stroke-dasharray="105 151" transform="rotate(-90 152 45)" />
+                  </svg>
+                </div>
+                <h3 class="card-title">2. Pie / Donut Chart</h3>
+                <p style="font-size:12.5px;color:#475569;margin:0 0 8px;">Compares shares or proportions out of 100% (e.g., 60% cotton vs. 40% synthetic imports).</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">IELTS Opening Formula</span>
+                <em>&ldquo;The pie charts compare the proportions of...&rdquo;</em>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <div class="svg-frame">
+                  <svg viewBox="0 0 220 90" aria-label="Bar chart diagram">
+                    <line x1="22" y1="74" x2="205" y2="74" stroke="#94a3b8" stroke-width="1.5" />
+                    <rect x="36" y="42" width="28" height="32" rx="3" fill="#0d9488" />
+                    <rect x="82" y="22" width="28" height="52" rx="3" fill="#1d4ed8" />
+                    <rect x="128" y="34" width="28" height="40" rx="3" fill="#d97706" />
+                    <rect x="170" y="16" width="28" height="58" rx="3" fill="#0f172a" />
+                  </svg>
+                </div>
+                <h3 class="card-title">3. Bar Chart</h3>
+                <p style="font-size:12.5px;color:#475569;margin:0 0 8px;">Compares distinct categories or percentage growth rates side by side (e.g., fiber cost rises).</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">IELTS Opening Formula</span>
+                <em>&ldquo;The bar chart compares the percentage growth in...&rdquo;</em>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <div class="svg-frame">
+                  <svg viewBox="0 0 220 90" aria-label="Combined multi-chart diagram">
+                    <circle cx="52" cy="45" r="24" fill="#1d4ed8" />
+                    <path d="M 52 45 L 52 21 A 24 24 0 0 1 73 57 Z" fill="#0d9488" />
+                    <line x1="104" y1="72" x2="204" y2="72" stroke="#94a3b8" stroke-width="1.5" />
+                    <polyline fill="none" stroke="#d97706" stroke-width="2.8" points="110,60 140,48 170,32 198,20" />
+                    <polyline fill="none" stroke="#0d9488" stroke-width="2.8" points="110,64 140,58 170,50 198,44" />
+                  </svg>
+                </div>
+                <h3 class="card-title">4. Combined / Multi-Chart</h3>
+                <p style="font-size:12.5px;color:#475569;margin:0 0 8px;">Pairs two visuals together (e.g., pie charts of material composition + line/bar chart of costs).</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">IELTS Opening Formula</span>
+                <em>&ldquo;The pie charts compare..., whereas the bar chart tracks...&rdquo;</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 2B: 8 Visual Trend Cards -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-teal">Part 2B • Visual Trend Dictionary</span>
+              <h2 class="section-title">8 Visual Trend Cards: CNBC Video Quotes &rarr; Band 8.0 IELTS Phrases</h2>
+              <p class="section-desc">Each card pairs a visual line movement with the quote from the video and high-scoring IELTS vocabulary.</p>
+            </div>
+          </div>
+
+          <div class="grid-4" id="vocabCardsGrid"></div>
+        </div>
+
+        <!-- Part 2C: Matching Quiz -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-amber">Part 2C • Interactive Trend Match</span>
+              <h2 class="section-title">Match the Video Observation to the Best IELTS Sentence (5 Questions)</h2>
+              <p class="section-desc">Select the grammatically and lexically accurate IELTS equivalent, then click <strong>Check</strong>.</p>
+            </div>
+            <div class="status-chip" id="vocabQuizScore">Score: 0 / 5</div>
+          </div>
+
+          <div class="grid-3" id="vocabQuizGrid"></div>
+
+          <div class="btn-bar">
+            <button type="button" class="btn btn-primary" onclick="checkVocabQuiz()">Check</button>
+            <button type="button" class="btn btn-amber" onclick="showVocabQuizAnswers()">Show Answers</button>
+            <button type="button" class="btn btn-ghost" onclick="resetVocabQuiz()">Start Again</button>
+            <span id="vocabQuizMsg" style="font-size:13px;font-weight:700;color:#1d4ed8;margin-left:auto;"></span>
+          </div>
+        </div>
+
+        <div class="stage-footer">
+          <button type="button" class="btn btn-ghost" onclick="switchTab('tab-1')">&larr; Previous: Video Player &amp; Listening Lab</button>
+          <button type="button" class="btn btn-navy" onclick="switchTab('tab-3')">Next: Grammar, Synonyms &amp; Precision &rarr;</button>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           TAB 3: VIDEO GRAMMAR, SYNONYMS & PRECISION
+      ================================================================== -->
+      <section id="tab-3" class="tab-panel">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-crimson">Part 3A • Video Grammar &rarr; IELTS Rules</span>
+              <h2 class="section-title">Essential IELTS Grammar Rules from the CNBC Apparel Report</h2>
+              <p class="section-desc">Master active vs. passive trend verbs, <em>-ing</em> turning-point clauses, verb tenses, and prepositions.</p>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="item-card">
+              <div>
+                <div class="badge-row">
+                  <span class="pill pill-crimson">Critical Rule #1</span>
+                  <span class="pill pill-navy">Active vs. Passive Voice</span>
+                </div>
+                <h3 class="card-title">Never Write &ldquo;The Figure Is Increased / Decreased&rdquo;!</h3>
+                <p style="font-size:13px;color:#334155;margin:0 0 10px;">
+                  Trend verbs (<em>increase, decrease, rise, fall, grow, surge, plummet</em>) are <strong>intransitive</strong> — numbers change by themselves, so use <strong>Active Voice</strong>. Use Passive Voice only when people/companies perform an action on a product.
+                </p>
+                <div class="quote-box">
+                  <span class="quote-label">Video Passive vs. Active Trend</span>
+                  &#10003; <em>&ldquo;Apparel imported into the US <strong>was made</strong> from cotton.&rdquo;</em> (Passive action on product)<br />
+                  &#10003; <em>&ldquo;China&rsquo;s share <strong>plummeted</strong> / The figure <strong>increased</strong> and then <strong>decreased</strong>.&rdquo;</em> (Active trend)
+                </div>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">IELTS Correction Rule</span>
+                &#10007; <em>The figure <strong>is increased</strong> / <strong>was decreased</strong> by 14%.</em><br />
+                &#10003; <em>The figure <strong>increased</strong> / <strong>decreased</strong> by 14%.</em>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <div class="badge-row">
+                  <span class="pill pill-blue">High-Band Grammar #2</span>
+                  <span class="pill pill-teal">Participle (-ing) Clauses</span>
+                </div>
+                <h3 class="card-title">Turning Points &amp; Crossovers: <em>-ing</em> Clauses</h3>
+                <p style="font-size:13px;color:#334155;margin:0 0 10px;">
+                  Link two movements in one complex sentence using <strong>after / before + verb-ing</strong> or a comma + <strong>overtaking</strong>. Never put a past-tense verb directly after <em>before / after</em> without a subject.
+                </p>
+                <div class="quote-box">
+                  <span class="quote-label">Band 8.0 Structural Templates</span>
+                  &bull; <em><strong>After reaching a substantial peak</strong> of 88k in 2020, petrol car sales fell sharply.</em><br />
+                  &bull; <em>Sales grew considerably <strong>before experiencing</strong> a dramatic decline.</em><br />
+                  &bull; <em>Electric cars <strong>surged to</strong> 68k in 2022, <strong>overtaking</strong> petrol cars by 16k.</em>
+                </div>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">Avoid This Classic Mistake</span>
+                &#10007; <em>...before <strong>experienced</strong> a dramatic decline.</em><br />
+                &#10003; <em>...before <strong>experiencing</strong> a dramatic decline.</em>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <div class="badge-row">
+                  <span class="pill pill-amber">Tense Control #3</span>
+                  <span class="pill pill-navy">Past Simple vs. Present Perfect</span>
+                </div>
+                <h3 class="card-title">Choosing the Right Tense for Your Timeframe</h3>
+                <p style="font-size:13px;color:#334155;margin:0 0 10px;">
+                  In the video, Present Perfect describes trends up to &ldquo;today&rdquo;, whereas Past Simple describes finished years. In IELTS, check the final year on the X-axis!
+                </p>
+                <div class="quote-box">
+                  <span class="quote-label">Exact Examples from the Video</span>
+                  &bull; <strong>Present Perfect (up to now):</strong> <em>&ldquo;Prices <strong>have gone up</strong>&rdquo; / &ldquo;Ralph Lauren&rsquo;s stock <strong>has soared</strong>.&rdquo;</em><br />
+                  &bull; <strong>Past Simple (finished past):</strong> <em>&ldquo;In 2010, nearly 60% of apparel <strong>was made</strong> from cotton.&rdquo;</em>
+                </div>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">IELTS Exam Rule</span>
+                If the graph ends in a finished past year (e.g., <em>2014–2024</em>), use <strong>Past Simple</strong> throughout (<em>grew, surged, decreased</em>). Use Present Perfect only when the chart says <em>&ldquo;to today / present&rdquo;</em>.
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <div class="badge-row">
+                  <span class="pill pill-teal">Preposition Precision #4</span>
+                  <span class="pill pill-blue">to vs. by vs. at</span>
+                </div>
+                <h3 class="card-title">Prepositions That Control Meaning: <em>to, by, at</em></h3>
+                <p style="font-size:13px;color:#334155;margin:0 0 10px;">
+                  Mixing up <strong>to</strong> and <strong>by</strong> changes the numbers completely in IELTS Task 1:
+                </p>
+                <div class="quote-box">
+                  <span class="quote-label">Three Essential Preposition Patterns</span>
+                  &bull; <strong>to (new level / endpoint):</strong> <em>surged <strong>to</strong> 68k</em> / <em>plummeted <strong>to</strong> 11%</em>.<br />
+                  &bull; <strong>by (amount of change / gap):</strong> <em>rose <strong>by</strong> 20%</em> / <em>overtaking petrol cars <strong>by</strong> 32k</em>.<br />
+                  &bull; <strong>at (static level / peak / low):</strong> <em>stood <strong>at</strong> 65k</em> / <em>peaked <strong>at</strong> 92k</em>.
+                </div>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">Article Reminder</span>
+                Write <em><strong>by 2024</strong></em> (no <em>the</em> before years) and <em><strong>by 32k</strong></em> (no <em>a</em> before plural quantities).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 3B: Synonyms & Collocations -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-teal">Part 3B • Lexical Resource (Band 7.5–8.5)</span>
+              <h2 class="section-title">Video Synonyms &amp; High-Scoring Trend Collocations</h2>
+              <p class="section-desc">Rotate these natural academic equivalents from the report instead of repeating <em>consumers</em>, <em>clothes</em>, or <em>increased</em>.</p>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="item-card">
+              <div>
+                <span class="pill pill-blue" style="margin-bottom:8px;">People Who Buy</span>
+                <h3 class="card-title">Synonyms for &ldquo;Consumers&rdquo;</h3>
+                <div class="quote-box" style="margin-bottom:0;">
+                  <span class="quote-label">Vocabulary Bank</span>
+                  &bull; <strong>consumers</strong> / <strong>shoppers</strong><br />
+                  &bull; <strong>customers</strong> / <strong>buyers</strong><br />
+                  &bull; <strong>value-sensitive customers</strong><br />
+                  &bull; <strong>everyday shoppers / the masses</strong><br />
+                  &bull; <strong>young adults / Gen Z buyers</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <span class="pill pill-teal" style="margin-bottom:8px;">Products &amp; Fabrics</span>
+                <h3 class="card-title">Apparel &amp; Material Vocabulary</h3>
+                <div class="quote-box" style="margin-bottom:0;">
+                  <span class="quote-label">Vocabulary Bank</span>
+                  &bull; <strong>apparel</strong> / <strong>garments</strong> / <strong>clothing</strong><br />
+                  &bull; <strong>fashion items</strong> / <strong>retail goods</strong><br />
+                  &bull; <strong>natural fibers</strong> (cotton, wool, linen)<br />
+                  &bull; <strong>man-made / synthetic fibers</strong> (polyester, nylon)<br />
+                  &bull; <strong>synthetic blends</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <span class="pill pill-amber" style="margin-bottom:8px;">Verb + Adverb Power</span>
+                <h3 class="card-title">Strong vs. Gradual Trend Verbs</h3>
+                <div class="quote-box" style="margin-bottom:0;">
+                  <span class="quote-label">Vocabulary Bank</span>
+                  &bull; <strong>grew considerably</strong> / <strong>rose considerably</strong><br />
+                  &bull; <strong>surged to [X]</strong> / <strong>soared</strong><br />
+                  &bull; <strong>grew gradually</strong> / <strong>rose gradually</strong><br />
+                  &bull; <strong>the figure increased / decreased</strong><br />
+                  &bull; <strong>plummeted to [X]</strong> / <strong>declined sharply</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <div>
+                <span class="pill pill-crimson" style="margin-bottom:8px;">Band 8.0 Linking</span>
+                <h3 class="card-title">Peaks, Dips &amp; Overtaking Phrases</h3>
+                <div class="quote-box" style="margin-bottom:0;">
+                  <span class="quote-label">Vocabulary Bank</span>
+                  &bull; <strong>after reaching a substantial peak</strong><br />
+                  &bull; <strong>before / after experiencing</strong> a sharp drop<br />
+                  &bull; <strong>overtaking [Category B] by [X]</strong><br />
+                  &bull; <strong>outpaced / outgrew</strong><br />
+                  &bull; <strong>accounted for / made up</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 3C: Numbers & Data Units Matrix -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-navy">Part 3C • Unit Precision Matrix</span>
+              <h2 class="section-title">How to Describe Numbers: <em>figure</em> vs. <em>percentage</em> vs. <em>number</em> vs. <em>price</em></h2>
+              <p class="section-desc">Always check the Y-axis and subtitle before choosing your noun.</p>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="item-card" style="border-top:4px solid #1d4ed8;">
+              <div>
+                <span class="pill pill-blue" style="margin-bottom:8px;">Universal Safe Noun</span>
+                <h3 class="card-title">The Figure For...</h3>
+                <p style="font-size:12.5px;color:#334155;margin:0 0 8px;">Works safely for <strong>percentages (%), thousands (65k), prices ($), and index points</strong>.</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">Examples</span>
+                &bull; <em><strong>The figure for</strong> cotton stood at 60%.</em><br />
+                &bull; <em><strong>The figure</strong> increased to 88k before falling.</em>
+              </div>
+            </div>
+
+            <div class="item-card" style="border-top:4px solid #0d9488;">
+              <div>
+                <span class="pill pill-teal" style="margin-bottom:8px;">For % Charts</span>
+                <h3 class="card-title">The Percentage / Proportion Of...</h3>
+                <p style="font-size:12.5px;color:#334155;margin:0 0 8px;">Use when the axis shows <strong>%</strong>. Measure gaps in <strong>percentage points</strong>.</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">Examples</span>
+                &bull; <em><strong>The proportion of</strong> synthetic imports rose to 60%.</em><br />
+                &bull; &#10007; Never write: <em>the percentage of 60%</em>.
+              </div>
+            </div>
+
+            <div class="item-card" style="border-top:4px solid #0f172a;">
+              <div>
+                <span class="pill pill-navy" style="margin-bottom:8px;">For Countable Items (k)</span>
+                <h3 class="card-title">The Number Of + Plural</h3>
+                <p style="font-size:12.5px;color:#334155;margin:0 0 8px;">Use for countable items (<em>cars, bicycles, garments</em>), even when measured <strong>in thousands (65k)</strong>.</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">Examples</span>
+                &bull; <em><strong>The number of</strong> electric cars surged to 68k.</em><br />
+                &bull; &#10007; Never write: <em>the amount of cars</em>.
+              </div>
+            </div>
+
+            <div class="item-card" style="border-top:4px solid #d97706;">
+              <div>
+                <span class="pill pill-amber" style="margin-bottom:8px;">Only For Money ($ / CPI)</span>
+                <h3 class="card-title">The Price / Cost Of...</h3>
+                <p style="font-size:12.5px;color:#334155;margin:0 0 8px;">Use <strong>only</strong> when currency (<em>$, &pound;, &euro;</em>) or <em>unit price / CPI</em> is explicitly shown.</p>
+              </div>
+              <div class="ielts-box">
+                <span class="ielts-label">Examples</span>
+                &bull; <em><strong>The unit price of</strong> cotton rose by 20%.</em><br />
+                &bull; &#10007; Never call <em>65k cars</em> &ldquo;the price&rdquo;.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 3D: 8-Item Grammar, Synonym & Unit Clinic -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-crimson">Part 3D • Diagnostic Clinic</span>
+              <h2 class="section-title">Grammar, Synonym &amp; Unit Precision Check (8 Questions)</h2>
+              <p class="section-desc">Choose the accurate IELTS sentence for each rule, then click <strong>Check</strong>.</p>
+            </div>
+            <div class="status-chip" id="grammarClinicScore">Score: 0 / 8</div>
+          </div>
+
+          <div class="grid-2" id="grammarClinicGrid"></div>
+
+          <div class="btn-bar">
+            <button type="button" class="btn btn-primary" onclick="checkGrammarClinic()">Check</button>
+            <button type="button" class="btn btn-amber" onclick="showGrammarClinicAnswers()">Show Answers</button>
+            <button type="button" class="btn btn-ghost" onclick="resetGrammarClinic()">Start Again</button>
+            <span id="grammarClinicMsg" style="font-size:13px;font-weight:700;color:#1d4ed8;margin-left:auto;"></span>
+          </div>
+        </div>
+
+        <div class="stage-footer">
+          <button type="button" class="btn btn-ghost" onclick="switchTab('tab-2')">&larr; Previous: Visual Vocabulary</button>
+          <button type="button" class="btn btn-navy" onclick="switchTab('tab-4')">Next: Speaking &amp; Writing Studio &rarr;</button>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           TAB 4: SPEAKING & WRITING STUDIO (NO HINTS)
+      ================================================================== -->
+      <section id="tab-4" class="tab-panel">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-navy">Tab 4 • Unassisted Exam Mode (Zero Hints)</span>
+              <h2 class="section-title">Describe the Video Charts Independently (Speaking &amp; Writing)</h2>
+              <p class="section-desc">No word banks or fill-in hints are provided here. Summarize the visuals aloud in 2 minutes, then write a complete 150+ word IELTS Task 1 essay.</p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <!-- Chart A -->
+            <div class="item-card">
+              <h3 class="card-title">A. US Apparel Imports (2010 vs. Today)</h3>
+              <div class="svg-frame" style="margin-bottom:0;">
+                <svg viewBox="0 0 300 155">
+                  <text x="75" y="16" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">2010</text>
+                  <text x="225" y="16" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">Today</text>
+                  <circle cx="75" cy="76" r="44" fill="#0d9488" />
+                  <path d="M 75 76 L 75 32 A 44 44 0 1 1 49 111 Z" fill="#1d4ed8" />
+                  <text x="92" y="76" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">60%</text>
+                  <text x="52" y="76" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">40%</text>
+
+                  <circle cx="225" cy="76" r="44" fill="#1d4ed8" />
+                  <path d="M 225 76 L 225 32 A 44 44 0 1 1 199 111 Z" fill="#0d9488" />
+                  <text x="242" y="76" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">60%</text>
+                  <text x="202" y="76" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">40%</text>
+
+                  <rect x="42" y="134" width="10" height="10" rx="2" fill="#1d4ed8" />
+                  <text x="56" y="143" font-size="10.5" font-weight="700" fill="#334155">Cotton</text>
+                  <rect x="152" y="134" width="10" height="10" rx="2" fill="#0d9488" />
+                  <text x="166" y="143" font-size="10.5" font-weight="700" fill="#334155">Synthetic Fibers</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Chart B -->
+            <div class="item-card">
+              <h3 class="card-title">B. Unit Price Rise Since 2010 (%)</h3>
+              <div class="svg-frame" style="margin-bottom:0;">
+                <svg viewBox="0 0 300 155">
+                  <line x1="36" y1="125" x2="265" y2="125" stroke="#94a3b8" stroke-width="1.5" />
+                  <line x1="36" y1="20" x2="36" y2="125" stroke="#94a3b8" stroke-width="1.5" />
+                  <rect x="75" y="74" width="52" height="51" rx="4" fill="#0d9488" />
+                  <text x="101" y="67" text-anchor="middle" font-size="11" font-weight="800" fill="#0f766e">+11%</text>
+                  <text x="101" y="142" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">Polyester</text>
+
+                  <rect x="172" y="34" width="52" height="91" rx="4" fill="#d97706" />
+                  <text x="198" y="27" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">&gt;20%</text>
+                  <text x="198" y="142" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">Cotton</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Chart C -->
+            <div class="item-card">
+              <h3 class="card-title">C. China Share &amp; Sector Growth</h3>
+              <div class="svg-frame" style="margin-bottom:0;">
+                <svg viewBox="0 0 300 155">
+                  <line x1="25" y1="125" x2="145" y2="125" stroke="#94a3b8" stroke-width="1.5" />
+                  <polyline fill="none" stroke="#dc2626" stroke-width="3" points="32,32 85,58 138,108" />
+                  <text x="34" y="24" font-size="10" font-weight="800" fill="#dc2626">China ~38%</text>
+                  <text x="138" y="99" text-anchor="end" font-size="10" font-weight="800" fill="#dc2626">11%</text>
+                  <text x="85" y="142" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Import Share</text>
+
+                  <line x1="168" y1="125" x2="282" y2="125" stroke="#94a3b8" stroke-width="1.5" />
+                  <rect x="182" y="75" width="34" height="50" rx="3" fill="#64748b" />
+                  <text x="199" y="68" text-anchor="middle" font-size="10" font-weight="800" fill="#475569">3%</text>
+                  <rect x="234" y="45" width="34" height="80" rx="3" fill="#1d4ed8" />
+                  <text x="251" y="38" text-anchor="middle" font-size="10" font-weight="800" fill="#1d4ed8">5%</text>
+                  <text x="225" y="142" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Total vs. Sport</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Minute Speaking Monologue Drill -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-teal">Part 4A • Spoken Fluency Drill</span>
+              <h2 class="section-title">2-Minute Speaking Monologue: Explain the Data Aloud</h2>
+              <p class="section-desc">Start the timer and deliver a structured overview + key comparisons without looking at notes.</p>
+            </div>
+            <div class="timer-display" id="speakingTimer">02:00</div>
+          </div>
+
+          <div class="btn-bar" style="margin-top:0;padding-top:0;border-top:none;">
+            <button type="button" class="btn btn-teal" onclick="startSpeakingTimer()">Start 2-Min Timer</button>
+            <button type="button" class="btn btn-ghost" onclick="pauseSpeakingTimer()">Pause</button>
+            <button type="button" class="btn btn-ghost" onclick="resetSpeakingTimer()">Reset Timer</button>
+            <button type="button" class="btn btn-amber" onclick="toggleSpeakingModel()">Show Answers (Sample Monologue)</button>
+          </div>
+
+          <div class="model-box" id="speakingModelBox">
+            <span class="pill pill-amber" style="margin-bottom:8px;">Sample 2-Minute Spoken Summary</span>
+            <div class="model-essay">
+              <p>&ldquo;Looking at the charts from the apparel report, there has been a complete reversal in US clothing materials since 2010. While cotton previously accounted for 60% of imports, man-made fibers such as polyester have since surged to 60%, overtaking cotton by 20 percentage points. Over the same period, raw material costs grew considerably for cotton—rising by more than 20%—whereas polyester rose gradually by only 11%. Meanwhile, China&rsquo;s share of US apparel imports plummeted to around 11%, while sports apparel expanded at 5% annually, outpacing total clothing growth at 3%.&rdquo;</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Independent Writing Workspace -->
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-blue">Part 4B • Unassisted Exam Writing</span>
+              <h2 class="section-title">Write Your Complete IELTS Task 1 Essay (At Least 150 Words)</h2>
+              <p class="section-desc">Describe Charts A and B (and optionally Chart C). Include an Introduction, Overview, and Body Paragraphs.</p>
+            </div>
+            <div class="status-chip" id="studioWordCount">Words: 0 / 150+</div>
+          </div>
+
+          <textarea id="studioTextarea" rows="9" placeholder="Write your full IELTS Academic Writing Task 1 essay here from scratch..." oninput="updateWordCount('studioTextarea', 'studioWordCount')"></textarea>
+
+          <div class="feedback-box" id="studioFeedback"></div>
+
+          <div class="btn-bar">
+            <button type="button" class="btn btn-primary" onclick="checkStudioEssay()">Check</button>
+            <button type="button" class="btn btn-amber" onclick="toggleStudioModel()">Show Answers</button>
+            <button type="button" class="btn btn-ghost" onclick="resetStudioEssay()">Start Again</button>
+          </div>
+
+          <div class="model-box" id="studioModelBox">
+            <span class="pill pill-amber" style="margin-bottom:8px;">Band 8.0 Model Essay (~184 words)</span>
+            <div class="model-essay">
+              <p>The paired pie charts compare the proportions of cotton and man-made fibers in US apparel imports in 2010 and today, whereas the bar chart tracks the percentage growth in unit prices for both materials since 2010.</p>
+              <p>Overall, the composition of clothing purchased by US shoppers has completely reversed, with synthetic materials overtaking cotton as the dominant fiber. Over the same timeframe, unit prices for both fibers grew considerably, although cotton became expensive almost twice as fast as polyester.</p>
+              <p>In 2010, cotton accounted for the majority of US apparel imports at approximately 60%, compared with around 40% for man-made fibers such as polyester and nylon. By the present day, however, the figure for synthetic fibers has surged to 60%, overtaking cotton by 20 percentage points after cotton declined to 40%.</p>
+              <p>Regarding raw material costs since 2010, the unit price of cotton grew considerably by over 20% by 2026. In contrast, the figure for polyester rose gradually by 11%, remaining notably cheaper for manufacturers and value-sensitive customers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-footer">
+          <button type="button" class="btn btn-ghost" onclick="switchTab('tab-3')">&larr; Previous: Grammar &amp; Synonyms</button>
+          <button type="button" class="btn btn-navy" onclick="switchTab('tab-5')">Next: Homework Assignment &rarr;</button>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           TAB 5: HOMEWORK — PARALLEL IELTS MULTI-CHART TASK
+      ================================================================== -->
+      <section id="tab-5" class="tab-panel">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <span class="pill pill-crimson">Tab 5 • Homework Assignment</span>
+              <h2 class="section-title">Parallel Exam Task: Global Footwear Material Composition &amp; Input Cost Growth</h2>
+              <p class="section-desc">Apply every grammar rule, synonym, and trend structure from this lesson to a fresh multi-chart dataset.</p>
+            </div>
+            <div class="status-chip" id="hwWordCount">Words: 0 / 150+</div>
+          </div>
+
+          <div class="grid-2" style="margin-bottom:16px;">
+            <div class="item-card">
+              <div>
+                <span class="pill pill-navy" style="margin-bottom:8px;">Official IELTS Task 1 Prompt</span>
+                <p style="font-size:13.5px;font-weight:700;color:#0f172a;margin:0 0 8px;">
+                  The pie charts below compare the proportions of natural materials (leather and canvas) and synthetic polymers used in global footwear manufacturing in 2012 and 2026, while the bar chart shows the percentage increase in unit costs for both materials over the same 14-year period.
+                </p>
+                <p style="font-size:13px;font-style:italic;color:#475569;margin:0 0 8px;">
+                  Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.
+                </p>
+              </div>
+              <div>
+                <p style="font-size:12px;font-weight:800;color:#1e293b;margin:8px 0 4px;">Pre-Writing Self-Check Rubric:</p>
+                <div class="checklist-grid">
+                  <label class="check-label"><input type="checkbox" /> <span>Paraphrased both charts in Introduction</span></label>
+                  <label class="check-label"><input type="checkbox" /> <span>Clear Overview highlighting the reversal</span></label>
+                  <label class="check-label"><input type="checkbox" /> <span>Active verbs (no <em>was increased</em>)</span></label>
+                  <label class="check-label"><input type="checkbox" /> <span>Used <em>overtaking</em> &amp; <em>grew considerably</em></span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="item-card">
+              <h3 class="card-title">Global Footwear Materials (2012 vs. 2026) &amp; Cost Growth</h3>
+              <div class="svg-frame" style="margin-bottom:0;">
+                <svg viewBox="0 0 430 195" aria-label="Global Footwear Material Composition and Cost Growth">
+                  <text x="72" y="18" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">2012 Footwear</text>
+                  <circle cx="72" cy="86" r="46" fill="#0d9488" />
+                  <path d="M 72 86 L 72 40 A 46 46 0 1 1 41 120 Z" fill="#1d4ed8" />
+                  <text x="90" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">62%</text>
+                  <text x="48" y="84" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">38%</text>
+
+                  <text x="192" y="18" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">2026 Footwear</text>
+                  <circle cx="192" cy="86" r="46" fill="#1d4ed8" />
+                  <path d="M 192 86 L 192 40 A 46 46 0 1 1 161 120 Z" fill="#0d9488" />
+                  <text x="210" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">62%</text>
+                  <text x="168" y="84" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">38%</text>
+
+                  <text x="342" y="18" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">Unit Cost Rise (%)</text>
+                  <line x1="274" y1="132" x2="412" y2="132" stroke="#94a3b8" stroke-width="1.5" />
+                  <line x1="274" y1="32" x2="274" y2="132" stroke="#94a3b8" stroke-width="1.5" />
+
+                  <rect x="292" y="86" width="38" height="46" rx="4" fill="#0d9488" />
+                  <text x="311" y="79" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0f766e">+12%</text>
+                  <text x="311" y="147" text-anchor="middle" font-size="9.5" font-weight="700" fill="#334155">Synthetic</text>
+
+                  <rect x="352" y="46" width="38" height="86" rx="4" fill="#d97706" />
+                  <text x="371" y="39" text-anchor="middle" font-size="10.5" font-weight="800" fill="#b45309">+24%</text>
+                  <text x="371" y="147" text-anchor="middle" font-size="9.5" font-weight="700" fill="#334155">Natural</text>
+
+                  <rect x="24" y="170" width="11" height="11" rx="2" fill="#1d4ed8" />
+                  <text x="40" y="179" font-size="10.5" font-weight="700" fill="#334155">Natural Leather / Canvas</text>
+                  <rect x="195" y="170" width="11" height="11" rx="2" fill="#0d9488" />
+                  <text x="211" y="179" font-size="10.5" font-weight="700" fill="#334155">Synthetic Polymers</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <textarea id="hwTextarea" rows="9" placeholder="Write your homework essay (at least 150 words) here..." oninput="updateWordCount('hwTextarea', 'hwWordCount')"></textarea>
+
+          <div class="feedback-box" id="hwFeedback"></div>
+
+          <div class="btn-bar">
+            <button type="button" class="btn btn-primary" onclick="checkHomework()">Check</button>
+            <button type="button" class="btn btn-amber" onclick="toggleHomeworkModel()">Show Answers</button>
+            <button type="button" class="btn btn-teal" onclick="copyHomeworkDraft()">Copy Draft</button>
+            <button type="button" class="btn btn-ghost" onclick="resetHomework()">Start Again</button>
+          </div>
+
+          <div class="model-box" id="hwModelBox">
+            <span class="pill pill-amber" style="margin-bottom:8px;">Band 8.0 Homework Model Answer (~180 words)</span>
+            <div class="model-essay">
+              <p>The two pie charts compare the proportions of natural materials (leather and canvas) and synthetic polymers used in global footwear manufacturing in 2012 and 2026, while the bar chart illustrates the cumulative percentage growth in unit costs for both materials over the 14-year period.</p>
+              <p>Overall, footwear production for global shoppers shifted dramatically from natural-dominated to synthetic-dominated, while raw material costs rose for both categories, with natural leather and canvas prices increasing twice as fast as synthetic polymers.</p>
+              <p>In 2012, natural materials accounted for 62% of global footwear manufacturing, whereas synthetic polymers made up 38%. By 2026, however, this pattern had completely reversed: the figure for synthetic polymers surged to 62%, overtaking natural materials by 24 percentage points after natural inputs decreased to 38%.</p>
+              <p>Over the same timeframe, the unit cost of natural leather and canvas grew considerably, climbing by 24% by 2026. In contrast, the figure for synthetic polymers rose gradually, recording a modest overall increase of 12%.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-footer">
+          <button type="button" class="btn btn-ghost" onclick="switchTab('tab-4')">&larr; Previous: Speaking &amp; Writing Studio</button>
+          <button type="button" class="btn btn-primary" onclick="switchTab('tab-1')">Return to Tab 1: Video Player</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Official YouTube IFrame Player API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    /* =====================================================================
+       1. TAB SWITCHING & GLOBAL PROGRESS
+    ===================================================================== */
+    var tabLabels = {
+      'tab-1': 'Tab 1 of 5 • Interactive Video Lab',
+      'tab-2': 'Tab 2 of 5 • Visual Vocabulary',
+      'tab-3': 'Tab 3 of 5 • Grammar & Precision',
+      'tab-4': 'Tab 4 of 5 • Speaking & Writing Studio',
+      'tab-5': 'Tab 5 of 5 • Homework Task'
+    };
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-target') === tabId);
+      });
+      document.querySelectorAll('.tab-panel').forEach(function (panel) {
+        panel.classList.toggle('active', panel.id === tabId);
+      });
+      var badge = document.getElementById('globalProgressBadge');
+      if (badge && tabLabels[tabId]) {
+        badge.textContent = tabLabels[tabId];
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        switchTab(btn.getAttribute('data-target'));
+      });
+    });
+
+    /* =====================================================================
+       2. INTERACTIVE YOUTUBE PLAYER, AUTO-PAUSE CUES & CLICKABLE DICTIONARY
+    ===================================================================== */
+    var vocabDictionary = {
+      'consumers': {
+        word: 'consumers',
+        pos: 'Noun (Plural)',
+        meaning: 'People who purchase goods and services for personal use.',
+        ukrainian: 'споживачі, покупці',
+        ielts: 'shoppers, buyers, customers, everyday consumers',
+        grammar: 'Countable plural noun: use "the number of consumers" or "the percentage of consumers" (never "amount of").'
+      },
+      'alignment': {
+        word: 'alignment (of price and quality)',
+        pos: 'Noun',
+        meaning: 'Proper agreement or balance between what an item costs and how well it is made.',
+        ukrainian: 'відповідність, баланс (ціни та якості)',
+        ielts: 'balance, correlation, parity between cost and quality',
+        grammar: 'Followed by the preposition "of" or "between" (alignment between price and quality).'
+      },
+      'apparel': {
+        word: 'apparel',
+        pos: 'Uncountable Noun',
+        meaning: 'Clothing, especially outer garments sold in retail stores.',
+        ukrainian: 'одяг, предмети гардероба',
+        ielts: 'clothing, garments, fashion items, retail wear',
+        grammar: 'Uncountable noun (never write "apparels"). For countable items, use "garments" or "clothing items".'
+      },
+      'was made from': {
+        word: 'was made from',
+        pos: 'Passive Verb Phrase',
+        meaning: 'Manufactured using a specific raw material (such as cotton or polyester).',
+        ukrainian: 'був виготовлений із...',
+        ielts: 'was manufactured from, comprised, consisted of',
+        grammar: 'Use Passive Voice ("was made from") for manufacturing actions on products, but Active Voice ("increased / fell") for chart trends!'
+      },
+      'value-sensitive customer': {
+        word: 'value-sensitive customer',
+        pos: 'Compound Adjective + Noun',
+        meaning: 'A shopper who pays close attention to price and looks for affordable deals.',
+        ukrainian: 'покупець, чутливий до ціни; економний споживач',
+        ielts: 'price-conscious shoppers, budget-minded buyers',
+        grammar: 'Hyphenated compound modifiers before a noun stay singular ("value-sensitive", like "a 10-year period").'
+      },
+      'unit price': {
+        word: 'unit price',
+        pos: 'Noun Phrase',
+        meaning: 'The cost of a single item or standard measurement of raw material.',
+        ukrainian: 'ціна за одиницю товару / сировини',
+        ielts: 'cost per unit, average price, expenditure per item',
+        grammar: 'Use "price / cost" ONLY when currency ($ / £) or unit price is explicitly shown on the graph.'
+      },
+      'decade prior to': {
+        word: 'decade prior to',
+        pos: 'Time Phrase',
+        meaning: 'The ten-year period immediately before a specific event.',
+        ukrainian: 'десятиліття до / перед...',
+        ielts: 'the 10-year period preceding..., in the decade before...',
+        grammar: 'Spell "prior" with an "r" at the end (not "priot") and follow it with "to".'
+      },
+      'plummeted': {
+        word: 'plummeted',
+        pos: 'Past Simple Verb',
+        meaning: 'Fell or dropped very steeply and rapidly in value or share.',
+        ukrainian: 'стрімко впав, обвалився',
+        ielts: 'declined sharply, fell dramatically, plunged to [X]',
+        grammar: 'Intransitive verb: write "China’s share plummeted to 11%" (never "was plummeted").'
+      },
+      'gain share': {
+        word: 'gain share',
+        pos: 'Verb + Noun Collocation',
+        meaning: 'Increase a country’s or company’s percentage of the total market.',
+        ukrainian: 'збільшувати частку ринку',
+        ielts: 'increase their market share, expand their proportion of...',
+        grammar: 'Followed by "in" or "of" (gain share of US apparel imports).'
+      },
+      'soared': {
+        word: 'soared / has soared',
+        pos: 'Verb (Past / Present Perfect)',
+        meaning: 'Rose rapidly and sharply to a much higher level.',
+        ukrainian: 'стрімко злетів, різко зріс',
+        ielts: 'surged to [X], climbed dramatically, rose sharply',
+        grammar: 'Use Present Perfect ("has soared") for trends continuing up to today, and Past Simple ("soared") for finished past years.'
+      },
+      'man-made fibers': {
+        word: 'man-made fibers',
+        pos: 'Compound Adjective + Plural Noun',
+        meaning: 'Artificial fabrics produced chemically (e.g., polyester, nylon) rather than from plants or animals.',
+        ukrainian: 'штучні / синтетичні волокна',
+        ielts: 'synthetic fibers, artificial textiles, non-natural materials',
+        grammar: 'Keep the hyphenated adjective "man-made" singular before plural "fibers".'
+      }
+    };
+
+    var videoCues = [
+      {
+        id: 0,
+        start: 31,
+        end: 46,
+        timeLabel: '00:31 – 00:46',
+        topic: 'Consumer Behavior',
+        segments: [
+          { word: 'consumers' },
+          { text: ' care increasingly about the ' },
+          { word: 'alignment' },
+          { text: ' of price and quality.' }
+        ],
+        gapPrefix: 'Consumers care increasingly about the ',
+        gapSuffix: ' of price and quality.',
+        answers: ['alignment'],
+        hint: 'Noun meaning balance/agreement (9 letters)'
+      },
+      {
+        id: 1,
+        start: 55,
+        end: 67,
+        timeLabel: '00:55 – 01:07',
+        topic: '2010 vs. Today Composition',
+        segments: [
+          { text: 'In 2010, nearly 60% of ' },
+          { word: 'apparel' },
+          { text: ' imported into the US ' },
+          { word: 'was made from' },
+          { text: ' cotton; today it’s around 40%.' }
+        ],
+        gapPrefix: 'In 2010, nearly 60% of ',
+        gapSuffix: ' imported into the US was made from cotton; today it’s around 40%.',
+        answers: ['apparel'],
+        hint: 'Uncountable synonym for clothing'
+      },
+      {
+        id: 2,
+        start: 122,
+        end: 138,
+        timeLabel: '02:02 – 02:18',
+        topic: 'Target Buyer Segment',
+        segments: [
+          { text: 'If you’re appealing to a more ' },
+          { word: 'value-sensitive customer' },
+          { text: ', you either reduce the quality or you negotiate with suppliers.' }
+        ],
+        gapPrefix: 'If you’re appealing to a more ',
+        gapSuffix: ' customer, you either reduce the quality or negotiate with suppliers.',
+        answers: ['value-sensitive', 'value sensitive'],
+        hint: 'Hyphenated adjective meaning price-conscious'
+      },
+      {
+        id: 3,
+        start: 139,
+        end: 146,
+        timeLabel: '02:19 – 02:26',
+        topic: 'Fiber Cost Comparison',
+        segments: [
+          { text: 'Polyester is cheaper than cotton; its ' },
+          { word: 'unit price' },
+          { text: ' is only up around 11% since 2010, while cotton is up over 20%.' }
+        ],
+        gapPrefix: 'Polyester is cheaper than cotton; its ',
+        gapSuffix: ' is only up around 11% since 2010, while cotton is up over 20%.',
+        answers: ['unit price'],
+        hint: 'Two words: cost per single unit'
+      },
+      {
+        id: 4,
+        start: 165,
+        end: 173,
+        timeLabel: '02:45 – 02:53',
+        topic: 'Sector Growth Rates',
+        segments: [
+          { text: 'In the ' },
+          { word: 'decade prior to' },
+          { text: ' COVID, sports apparel was growing at about a 5% growth rate versus total apparel in the US at about 3%.' }
+        ],
+        gapPrefix: 'In the decade ',
+        gapSuffix: ' COVID, sports apparel was growing at about a 5% growth rate.',
+        answers: ['prior to'],
+        hint: 'Two words meaning "before"'
+      },
+      {
+        id: 5,
+        start: 234,
+        end: 244,
+        timeLabel: '03:54 – 04:04',
+        topic: 'Import Share Shift',
+        segments: [
+          { text: 'China has ' },
+          { word: 'plummeted' },
+          { text: ' to around 11% of apparel imports by dollar value over the past decade as other countries like Cambodia, Bangladesh, and Vietnam ' },
+          { word: 'gain share' },
+          { text: '.' }
+        ],
+        gapPrefix: 'China has ',
+        gapSuffix: ' to around 11% of apparel imports by dollar value as other countries gain share.',
+        answers: ['plummeted'],
+        hint: 'Past participle meaning "dropped steeply"'
+      },
+      {
+        id: 6,
+        start: 429,
+        end: 437,
+        timeLabel: '07:09 – 07:17',
+        topic: 'Brand Performance',
+        segments: [
+          { text: 'These materials are the primary component of 90% of its products; the company’s stock has ' },
+          { word: 'soared' },
+          { text: ' over the past few years.' }
+        ],
+        gapPrefix: 'The company’s stock has ',
+        gapSuffix: ' over the past few years.',
+        answers: ['soared'],
+        hint: 'Past participle meaning "risen sharply"'
+      },
+      {
+        id: 7,
+        start: 510,
+        end: 520,
+        timeLabel: '08:30 – 08:40',
+        topic: 'Synthetic Material Inputs',
+        segments: [
+          { text: 'Petroleum is the basis of many ' },
+          { word: 'man-made fibers' },
+          { text: ' like polyester, and oil prices have ' },
+          { word: 'soared' },
+          { text: ' since the start of the Iran war.' }
+        ],
+        gapPrefix: 'Petroleum is the basis of many ',
+        gapSuffix: ' like polyester, and oil prices have soared.',
+        answers: ['man-made fibers', 'man made fibers'],
+        hint: 'Two words: synthetic textiles'
+      }
+    ];
+
+    var ytPlayer = null;
+    var ytReady = false;
+    var activeCueIdx = 0;
+    var autoPauseEnabled = true;
+    var subtitleMode = 'ON'; // 'ON' | 'BLUR' | 'OFF'
+    var cueMonitorInterval = null;
+    var pausedForCurrentCue = false;
+
+    // YouTube IFrame API Ready Callback
+    function onYouTubeIframeAPIReady() {
+      var playerConfig = {
+        videoId: 'XQxPvJ7H98s',
+        playerVars: {
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          cc_load_policy: 0
+        },
+        events: {
+          onReady: function () {
+            ytReady = true;
+            startCueMonitor();
+          }
+        }
+      };
+
+      if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        playerConfig.playerVars.origin = window.location.origin;
+      }
+
+      ytPlayer = new YT.Player('ytPlayerTarget', playerConfig);
+    }
+
+    function startCueMonitor() {
+      if (cueMonitorInterval) clearInterval(cueMonitorInterval);
+      cueMonitorInterval = setInterval(function () {
+        if (!ytReady || !ytPlayer || typeof ytPlayer.getPlayerState !== 'function') return;
+        if (ytPlayer.getPlayerState() !== 1) return; // Only check while playing (state 1)
+
+        var currentTime = ytPlayer.getCurrentTime();
+        var cue = videoCues[activeCueIdx];
+
+        if (autoPauseEnabled && !pausedForCurrentCue && currentTime >= cue.end) {
+          ytPlayer.pauseVideo();
+          pausedForCurrentCue = true;
+          var inputEl = document.getElementById('cue-inp-' + activeCueIdx);
+          if (inputEl) inputEl.focus();
+        }
+      }, 250);
+    }
+
+    function selectCue(idx, shouldPlay) {
+      activeCueIdx = idx;
+      pausedForCurrentCue = false;
+
+      document.querySelectorAll('.cue-card').forEach(function (card, cIdx) {
+        card.classList.toggle('active-cue', cIdx === idx);
+      });
+
+      renderActiveSubtitle();
+
+      if (shouldPlay && ytReady && ytPlayer && typeof ytPlayer.seekTo === 'function') {
+        ytPlayer.seekTo(videoCues[idx].start, true);
+        ytPlayer.playVideo();
+      }
+    }
+
+    function playActiveCue() {
+      selectCue(activeCueIdx, true);
+    }
+
+    function replayActiveCue() {
+      selectCue(activeCueIdx, true);
+    }
+
+    function continueVideo() {
+      pausedForCurrentCue = true;
+      if (ytReady && ytPlayer && typeof ytPlayer.playVideo === 'function') {
+        ytPlayer.playVideo();
+      }
+    }
+
+    function nextCue() {
+      var nextIdx = (activeCueIdx + 1) % videoCues.length;
+      selectCue(nextIdx, true);
+      var cardEl = document.getElementById('cue-card-' + nextIdx);
+      if (cardEl) {
+        cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function toggleAutoPause() {
+      autoPauseEnabled = !autoPauseEnabled;
+      var btn = document.getElementById('autoPauseBtn');
+      btn.textContent = autoPauseEnabled ? 'Auto-Pause at Cues: ON' : 'Auto-Pause at Cues: OFF';
+      btn.className = 'toggle-pill ' + (autoPauseEnabled ? 'active-on' : 'active-off');
+    }
+
+    function cycleSubtitleMode() {
+      if (subtitleMode === 'ON') {
+        subtitleMode = 'BLUR';
+      } else if (subtitleMode === 'BLUR') {
+        subtitleMode = 'OFF';
+      } else {
+        subtitleMode = 'ON';
+      }
+
+      var btn = document.getElementById('subModeBtn');
+      btn.textContent = 'Subtitles: ' + subtitleMode;
+      btn.className = 'toggle-pill ' + (
+        subtitleMode === 'ON' ? 'active-on' :
+        subtitleMode === 'BLUR' ? 'active-blur' : 'active-off'
+      );
+
+      renderActiveSubtitle();
+    }
+
+    function inspectVocab(wordKey) {
+      var entry = vocabDictionary[wordKey];
+      if (!entry) return;
+
+      document.querySelectorAll('.vocab-token').forEach(function (tok) {
+        tok.classList.toggle('selected', tok.getAttribute('data-word') === wordKey);
+      });
+
+      document.getElementById('inspWordTitle').textContent = entry.word;
+      document.getElementById('inspPosBadge').textContent = entry.pos;
+      document.getElementById('inspMeaning').textContent = entry.meaning;
+      document.getElementById('inspUkrainian').textContent = entry.ukrainian;
+      document.getElementById('inspIelts').textContent = entry.ielts;
+      document.getElementById('inspGrammar').textContent = entry.grammar;
+    }
+
+    function renderActiveSubtitle() {
+      var cue = videoCues[activeCueIdx];
+      document.getElementById('activeCueLabel').textContent =
+        'CUE ' + (activeCueIdx + 1) + ' OF ' + videoCues.length + ' • ' + cue.timeLabel + ' (' + cue.topic + ')';
+
+      var subEl = document.getElementById('activeSubtitleText');
+      var hiddenNotice = document.getElementById('subtitleHiddenNotice');
+
+      subEl.classList.remove('mode-blur', 'mode-off', 'revealed');
+      hiddenNotice.classList.remove('show');
+
+      if (subtitleMode === 'OFF') {
+        subEl.classList.add('mode-off');
+        hiddenNotice.classList.add('show');
+        return;
+      }
+
+      if (subtitleMode === 'BLUR') {
+        subEl.classList.add('mode-blur');
+        subEl.onclick = function () {
+          subEl.classList.toggle('revealed');
+        };
+      } else {
+        subEl.onclick = null;
+      }
+
+      subEl.innerHTML = cue.segments.map(function (seg) {
+        if (seg.word) {
+          return '<span class="vocab-token" data-word="' + seg.word + '" onclick="event.stopPropagation(); inspectVocab(\'' + seg.word + '\')">' + seg.word + '</span>';
+        }
+        return seg.text;
+      }).join('');
+    }
+
+    function renderCueCards() {
+      var container = document.getElementById('cueListContainer');
+      container.innerHTML = videoCues.map(function (cue, idx) {
+        return (
+          '<div class="cue-card ' + (idx === 0 ? 'active-cue' : '') + '" id="cue-card-' + idx + '">' +
+            '<div class="cue-top">' +
+              '<div style="display:flex;align-items:center;gap:8px;">' +
+                '<span class="time-badge" onclick="selectCue(' + idx + ', true)">&#9654; ' + cue.timeLabel + '</span>' +
+                '<strong style="font-size:13px;color:#0f172a;">Cue ' + (idx + 1) + ': ' + cue.topic + '</strong>' +
+              '</div>' +
+              '<button type="button" class="btn btn-ghost btn-sm" onclick="selectCue(' + idx + ', true)">Play Clip</button>' +
+            '</div>' +
+            '<p class="gap-sentence">' +
+              cue.gapPrefix +
+              '<input type="text" id="cue-inp-' + idx + '" class="inline-input" placeholder="' + cue.hint + '" onfocus="selectCue(' + idx + ', false)" />' +
+              cue.gapSuffix +
+            '</p>' +
+            '<div class="feedback-box" id="cue-fb-' + idx + '"></div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function checkAllListeningCues() {
+      var score = 0;
+      videoCues.forEach(function (cue, idx) {
+        var inp = document.getElementById('cue-inp-' + idx);
+        var fb = document.getElementById('cue-fb-' + idx);
+        var val = inp.value.trim().toLowerCase().replace(/\s+/g, ' ');
+
+        inp.classList.remove('correct', 'wrong');
+        fb.className = 'feedback-box show';
+
+        if (val && cue.answers.indexOf(val) !== -1) {
+          score++;
+          inp.classList.add('correct');
+          fb.classList.add('fb-success');
+          fb.innerHTML = '<strong>&#10003; Exact match!</strong> Heard in clip: <em>&ldquo;' + cue.answers[0] + '&rdquo;</em>.';
+        } else {
+          inp.classList.add('wrong');
+          fb.classList.add('fb-error');
+          fb.innerHTML = '<strong>&#10007; Answer:</strong> <em>' + cue.answers[0] + '</em> — Click <strong>Play Clip</strong> to listen again.';
+        }
+      });
+
+      document.getElementById('listeningScoreChip').textContent = 'Listening Score: ' + score + ' / ' + videoCues.length;
+      document.getElementById('listeningGlobalMsg').textContent = score === videoCues.length
+        ? 'Perfect! You caught all 8 phrases from the report.'
+        : 'You got ' + score + ' / ' + videoCues.length + '. Replay any highlighted clip to hear the phrase clearly.';
+    }
+
+    function showAllListeningAnswers() {
+      videoCues.forEach(function (cue, idx) {
+        document.getElementById('cue-inp-' + idx).value = cue.answers[0];
+      });
+      checkAllListeningCues();
+    }
+
+    function resetAllListeningCues() {
+      renderCueCards();
+      selectCue(0, false);
+      document.getElementById('listeningScoreChip').textContent = 'Listening Score: 0 / 8';
+      document.getElementById('listeningGlobalMsg').textContent = '';
+    }
+
+    /* =====================================================================
+       3. TAB 2: VISUAL TREND CARDS & MATCHING QUIZ
+    ===================================================================== */
+    var vocabCards = [
+      {
+        title: '1. Surging & Soaring Upward',
+        videoQuote: '"Prices have gone up / Ralph Lauren stock has soared"',
+        ieltsSynonyms: 'surged to [X], soared, rose sharply, climbed dramatically',
+        svg: '<line x1="16" y1="62" x2="204" y2="62" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#1d4ed8" stroke-width="3.2" stroke-linecap="round" points="22,60 72,56 122,46 164,26 198,14"/><circle cx="198" cy="14" r="4" fill="#1d4ed8"/>'
+      },
+      {
+        title: '2. Considerable Growth',
+        videoQuote: '"Grew at a 5% annual growth rate / Cotton up over 20%"',
+        ieltsSynonyms: 'grew considerably, rose considerably, saw substantial growth',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#0d9488" stroke-width="3.2" stroke-linecap="round" points="22,62 82,48 142,32 198,16"/><circle cx="198" cy="16" r="4" fill="#0d9488"/>'
+      },
+      {
+        title: '3. Gradual / Moderate Climb',
+        videoQuote: '"Polyester unit price is only up around 11% since 2010"',
+        ieltsSynonyms: 'grew gradually, rose gradually, increased modestly',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" points="22,60 82,53 142,45 198,38"/><circle cx="198" cy="38" r="4" fill="#16a34a"/>'
+      },
+      {
+        title: '4. Steep Plunge / Sharp Drop',
+        videoQuote: '"China has plummeted to around 11% of apparel imports"',
+        ieltsSynonyms: 'plummeted to [X], fell dramatically, the figure decreased sharply',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round" points="22,16 78,22 138,52 198,64"/><circle cx="198" cy="64" r="4" fill="#dc2626"/><text x="190" y="55" text-anchor="end" font-size="10" font-weight="800" fill="#dc2626">11%</text>'
+      },
+      {
+        title: '5. Reaching a Substantial Peak',
+        videoQuote: '"Reached a $10B valuation / hit a high point"',
+        ieltsSynonyms: 'after reaching a substantial peak of [X], peaked at [X]',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#d97706" stroke-width="3.2" stroke-linecap="round" points="22,58 76,36 122,14 172,44 198,54"/><circle cx="122" cy="14" r="4.5" fill="#d97706"/><text x="122" y="10" text-anchor="middle" font-size="9.5" font-weight="800" fill="#b45309">Peak</text>'
+      },
+      {
+        title: '6. Reversal / Experiencing a Drop',
+        videoQuote: '"Reversal of that trend / hit a rough patch"',
+        ieltsSynonyms: 'before / after experiencing a decline, reversed',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" points="22,22 86,28 136,58 198,36"/><circle cx="136" cy="58" r="4" fill="#7c3aed"/>'
+      },
+      {
+        title: '7. Overtaking Another Category',
+        videoQuote: '"Synthetic fibers overtook cotton (60% vs. 40%)"',
+        ieltsSynonyms: '..., overtaking [Category B] by [X], surpassed',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4 3" points="22,22 110,42 198,58"/><polyline fill="none" stroke="#1d4ed8" stroke-width="3.2" points="22,58 110,42 198,20"/><circle cx="110" cy="42" r="4" fill="#0f172a"/>'
+      },
+      {
+        title: '8. Levelling Off / Stability',
+        videoQuote: '"Mostly deflationary / remained flat for decades"',
+        ieltsSynonyms: 'levelled off, remained stable, flattened out, the figure decreased slightly',
+        svg: '<line x1="16" y1="68" x2="204" y2="68" stroke="#cbd5e1" stroke-width="1.2"/><polyline fill="none" stroke="#475569" stroke-width="3" stroke-linecap="round" points="22,26 84,46 144,46 198,47"/><circle cx="198" cy="47" r="4" fill="#475569"/>'
+      }
+    ];
+
+    function renderVocabCards() {
+      var grid = document.getElementById('vocabCardsGrid');
+      grid.innerHTML = vocabCards.map(function (c) {
+        return (
+          '<div class="item-card">' +
+            '<div>' +
+              '<div class="svg-frame"><svg viewBox="0 0 220 76">' + c.svg + '</svg></div>' +
+              '<h3 class="card-title">' + c.title + '</h3>' +
+              '<div class="quote-box"><span class="quote-label">Video Expression</span>' + c.videoQuote + '</div>' +
+            '</div>' +
+            '<div class="ielts-box"><span class="ielts-label">IELTS Academic Phrases</span>' + c.ieltsSynonyms + '</div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    var vocabQuizItems = [
+      {
+        q: '1. Video: "China has plummeted to around 11% of US apparel imports."',
+        options: [
+          'China’s share levelled off at 11%.',
+          'China’s share plummeted to approximately 11%.',
+          'China’s share grew gradually to 11%.'
+        ],
+        answer: 1,
+        explanation: '"Plummeted to" accurately describes a steep downward drop.'
+      },
+      {
+        q: '2. Video: "Synthetic fibers overtook cotton (60% vs. 40%)."',
+        options: [
+          'Synthetic fibers surged to 60%, overtaking cotton by 20 percentage points.',
+          'Synthetic fibers was increased to 60%, overtook cotton by a 20%.',
+          'The price of synthetic fibers stood at 60%.'
+        ],
+        answer: 0,
+        explanation: 'Use active "surged to 60%" + comma + "-ing" clause "overtaking cotton by 20 percentage points".'
+      },
+      {
+        q: '3. Video: "Cotton unit price is up over 20% since 2010."',
+        options: [
+          'The unit price of cotton grew considerably by over 20%.',
+          'The amount of cotton prices was increased by 20%.',
+          'Cotton unit price remained stable at 20%.'
+        ],
+        answer: 0,
+        explanation: '"Grew considerably" accurately conveys a substantial 20%+ rise.'
+      },
+      {
+        q: '4. Video: "Polyester unit price rose only 11% over 16 years."',
+        options: [
+          'The figure for polyester plummeted by 11%.',
+          'The figure for polyester rose gradually by 11%.',
+          'The figure for polyester is increased by 11%.'
+        ],
+        answer: 1,
+        explanation: '"Rose gradually" matches a slow, moderate climb over a long timeframe.'
+      },
+      {
+        q: '5. Video: "Apparel prices remained flat for decades before surging."',
+        options: [
+          'Apparel prices remained stable before experiencing a sharp surge.',
+          'Apparel prices remained stable before experienced a sharp surge.',
+          'Apparel prices peaked before levelling off.'
+        ],
+        answer: 0,
+        explanation: 'Use "remained stable" + "before experiencing" (-ing gerund after "before").'
+      }
+    ];
+
+    function renderVocabQuiz() {
+      var grid = document.getElementById('vocabQuizGrid');
+      grid.innerHTML = vocabQuizItems.map(function (item, idx) {
+        return (
+          '<div class="item-card">' +
+            '<div>' +
+              '<p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#0f172a;">' + item.q + '</p>' +
+              '<select id="vq-sel-' + idx + '">' +
+                '<option value="">-- Choose IELTS match --</option>' +
+                item.options.map(function (opt, oIdx) {
+                  return '<option value="' + oIdx + '">' + opt + '</option>';
+                }).join('') +
+              '</select>' +
+            '</div>' +
+            '<div class="feedback-box" id="vq-fb-' + idx + '"></div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function checkVocabQuiz() {
+      var score = 0;
+      vocabQuizItems.forEach(function (item, idx) {
+        var sel = document.getElementById('vq-sel-' + idx);
+        var fb = document.getElementById('vq-fb-' + idx);
+        fb.className = 'feedback-box show';
+        if (sel.value !== '' && Number(sel.value) === item.answer) {
+          score++;
+          fb.classList.add('fb-success');
+          fb.innerHTML = '<strong>&#10003; Correct!</strong> ' + item.explanation;
+        } else {
+          fb.classList.add('fb-error');
+          fb.innerHTML = '<strong>&#10007; Correct option:</strong> <em>' + item.options[item.answer] + '</em><br />' + item.explanation;
+        }
+      });
+      document.getElementById('vocabQuizScore').textContent = 'Score: ' + score + ' / ' + vocabQuizItems.length;
+      document.getElementById('vocabQuizMsg').textContent = score === vocabQuizItems.length
+        ? 'Perfect score! Move on to Tab 3.'
+        : 'You got ' + score + ' / ' + vocabQuizItems.length + '. Review the highlighted notes.';
+    }
+
+    function showVocabQuizAnswers() {
+      vocabQuizItems.forEach(function (item, idx) {
+        document.getElementById('vq-sel-' + idx).value = String(item.answer);
+      });
+      checkVocabQuiz();
+    }
+
+    function resetVocabQuiz() {
+      renderVocabQuiz();
+      document.getElementById('vocabQuizScore').textContent = 'Score: 0 / 5';
+      document.getElementById('vocabQuizMsg').textContent = '';
+    }
+
+    /* =====================================================================
+       4. TAB 3: 8-ITEM GRAMMAR, SYNONYM & UNIT PRECISION CLINIC
+    ===================================================================== */
+    var grammarClinicItems = [
+      {
+        q: '1. Active vs. Passive Trend Verb: Choose the grammatically accurate sentence.',
+        options: [
+          'Between 2010 and 2026, the figure for cotton prices was increased by 20%.',
+          'Between 2010 and 2026, the figure for cotton prices increased by 20%.',
+          'Between 2010 and 2026, the figure for cotton prices is increased by 20%.'
+        ],
+        answer: 1,
+        explanation: 'Trend verbs like "increase" and "decrease" are intransitive — use Active Past Simple ("increased"), never passive ("was/is increased").'
+      },
+      {
+        q: '2. Participle Clause After "before / after": Fix the verb form.',
+        options: [
+          'Regular bike sales grew considerably before experiencing a sharp drop.',
+          'Regular bike sales grew considerably before experienced a sharp drop.',
+          'Regular bike sales grew considerably before experience a sharp drop.'
+        ],
+        answer: 0,
+        explanation: 'When "before" or "after" is followed directly by a verb without a subject, always use the -ing gerund ("before experiencing").'
+      },
+      {
+        q: '3. Turning-Point Clause: Combine a peak and a drop smoothly.',
+        options: [
+          'After reach a substantial peak of 92k, the figure decreased.',
+          'After reaching a substantial peak of 92k, the figure decreased.',
+          'After reached a substantial peak of 92k, the figure was decreased.'
+        ],
+        answer: 1,
+        explanation: 'Use "After reaching a substantial peak of [X]" followed by an active Past Simple main clause ("the figure decreased").'
+      },
+      {
+        q: '4. Crossover Clause: How do we describe one line passing another?',
+        options: [
+          'E-bikes surged to 72k in 2020, overtaking regular bikes by 18k.',
+          'E-bikes surged to 72k in 2020, overtook regular bikes by a 18k.',
+          'E-bikes surged by 72k in 2020, overtake regular bikes to 18k.'
+        ],
+        answer: 0,
+        explanation: 'Use "surged to [endpoint]" + comma + "-ing" participle clause ("overtaking regular bikes by 18k", with no "a" before 18k).'
+      },
+      {
+        q: '5. Verb + Adverb Collocation: Contrast rapid vs. slow growth.',
+        options: [
+          'Cotton prices growth considerable, while polyester rose gradual.',
+          'Cotton prices grew considerably, while polyester rose gradually.',
+          'Cotton prices were grew considerably, while polyester was rose gradually.'
+        ],
+        answer: 1,
+        explanation: 'Pair Past Simple verbs ("grew", "rose") with adverbs ending in "-ly" ("considerably", "gradually").'
+      },
+      {
+        q: '6. Topic Synonyms: Which phrase best replaces "people who buy cheap clothes"?',
+        options: [
+          'value-sensitive shoppers / everyday consumers',
+          'the amount of clothes buyers',
+          'apparel prices'
+        ],
+        answer: 0,
+        explanation: 'The CNBC report uses "value-sensitive customers", "everyday shoppers", and "consumers" to refer to buyers naturally.'
+      },
+      {
+        q: '7. Universal Data Noun: Which noun works safely for %, thousands, and index figures?',
+        options: [
+          'The price for synthetic fibers rose to 60%.',
+          'The amount of synthetic fibers rose to 60%.',
+          'The figure for synthetic fibers rose to 60%.'
+        ],
+        answer: 2,
+        explanation: '"The figure for..." is the safest universal noun in IELTS Task 1 for percentages, thousands, and index points.'
+      },
+      {
+        q: '8. Countable Units: Which sentence describes "65k bicycles bought" accurately?',
+        options: [
+          'The price of bicycles stood at 65k.',
+          'The number of bicycles purchased stood at 65k.',
+          'The amount of bicycles purchased stood at 65k.'
+        ],
+        answer: 1,
+        explanation: 'Bicycles are countable ("in thousands"), so use "the number of bicycles" or "the figure for bicycles" — never "price" or "amount".'
+      }
+    ];
+
+    function renderGrammarClinic() {
+      var grid = document.getElementById('grammarClinicGrid');
+      grid.innerHTML = grammarClinicItems.map(function (item, idx) {
+        return (
+          '<div class="item-card">' +
+            '<div>' +
+              '<p style="margin:0 0 10px;font-size:13.5px;font-weight:700;color:#0f172a;">' + item.q + '</p>' +
+              '<select id="gc-sel-' + idx + '">' +
+                '<option value="">-- Select accurate IELTS sentence --</option>' +
+                item.options.map(function (opt, oIdx) {
+                  return '<option value="' + oIdx + '">' + opt + '</option>';
+                }).join('') +
+              '</select>' +
+            '</div>' +
+            '<div class="feedback-box" id="gc-fb-' + idx + '"></div>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function checkGrammarClinic() {
+      var score = 0;
+      grammarClinicItems.forEach(function (item, idx) {
+        var sel = document.getElementById('gc-sel-' + idx);
+        var fb = document.getElementById('gc-fb-' + idx);
+        fb.className = 'feedback-box show';
+        if (sel.value !== '' && Number(sel.value) === item.answer) {
+          score++;
+          fb.classList.add('fb-success');
+          fb.innerHTML = '<strong>&#10003; Correct!</strong> ' + item.explanation;
+        } else {
+          fb.classList.add('fb-error');
+          fb.innerHTML = '<strong>&#10007; Target sentence:</strong> <em>' + item.options[item.answer] + '</em><br />' + item.explanation;
+        }
+      });
+      document.getElementById('grammarClinicScore').textContent = 'Score: ' + score + ' / ' + grammarClinicItems.length;
+      document.getElementById('grammarClinicMsg').textContent = score === grammarClinicItems.length
+        ? 'Outstanding! All 8 grammar, synonym, and unit rules mastered.'
+        : 'You scored ' + score + ' / ' + grammarClinicItems.length + '. Review the explanations on highlighted cards.';
+    }
+
+    function showGrammarClinicAnswers() {
+      grammarClinicItems.forEach(function (item, idx) {
+        document.getElementById('gc-sel-' + idx).value = String(item.answer);
+      });
+      checkGrammarClinic();
+    }
+
+    function resetGrammarClinic() {
+      renderGrammarClinic();
+      document.getElementById('grammarClinicScore').textContent = 'Score: 0 / 8';
+      document.getElementById('grammarClinicMsg').textContent = '';
+    }
+
+    /* =====================================================================
+       5. TAB 4 & TAB 5: SPEAKING TIMER, ESSAY DIAGNOSTICS & HOMEWORK
+    ===================================================================== */
+    var speakingSeconds = 120;
+    var speakingInterval = null;
+
+    function renderTimer() {
+      var mins = Math.floor(speakingSeconds / 60);
+      var secs = speakingSeconds % 60;
+      var formatted = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+      document.getElementById('speakingTimer').textContent = formatted;
+    }
+
+    function startSpeakingTimer() {
+      if (speakingInterval) return;
+      speakingInterval = setInterval(function () {
+        if (speakingSeconds > 0) {
+          speakingSeconds--;
+          renderTimer();
+        } else {
+          clearInterval(speakingInterval);
+          speakingInterval = null;
+        }
+      }, 1000);
+    }
+
+    function pauseSpeakingTimer() {
+      if (speakingInterval) {
+        clearInterval(speakingInterval);
+        speakingInterval = null;
+      }
+    }
+
+    function resetSpeakingTimer() {
+      pauseSpeakingTimer();
+      speakingSeconds = 120;
+      renderTimer();
+    }
+
+    function toggleSpeakingModel() {
+      document.getElementById('speakingModelBox').classList.toggle('show');
+    }
+
+    function updateWordCount(textareaId, badgeId) {
+      var text = document.getElementById(textareaId).value.trim();
+      var words = text ? text.split(/\s+/).length : 0;
+      var badge = document.getElementById(badgeId);
+      badge.textContent = 'Words: ' + words + ' / 150+';
+      badge.style.background = words >= 150 ? '#dcfce7' : '#f8fafc';
+      badge.style.borderColor = words >= 150 ? '#86efac' : '#cbd5e1';
+      badge.style.color = words >= 150 ? '#14532d' : '#1e293b';
+    }
+
+    function runDiagnosticScan(text, requiredFigures) {
+      var lower = text.toLowerCase();
+      var warnings = [];
+
+      if (/\b(is|was|were|are) (increased|decreased|risen|fallen|grown|surged|plummeted)\b/.test(lower)) {
+        warnings.push('Active vs. Passive trap: Use active Past Simple ("the figure increased / decreased"), NOT passive ("is/was increased").');
+      }
+      if (/\bbefore experienced\b|\bafter experienced\b/.test(lower)) {
+        warnings.push('Participle rule: Use "-ing" after "before/after" without a subject ("before experiencing" / "after reaching").');
+      }
+      if (/\bamount of (fibers|materials|imports|shoes|pairs|cars|bicycles)\b/.test(lower)) {
+        warnings.push('Use "proportion of", "share of", or "number of" instead of "amount of" before countable nouns.');
+      }
+      if (/\bthe (2010|2012|2016|2018|2020|2023|2026)\b/.test(lower)) {
+        warnings.push('Remove "the" before years (write "in 2010" or "by 2026", not "in the 2010").');
+      }
+      if (/\bbefor\b/.test(lower)) warnings.push('Spelling check: "before" (with final "e").');
+      if (/\bpriot\b/.test(lower)) warnings.push('Spelling check: "prior" (with "r").');
+      if (/\bwhith\b/.test(lower)) warnings.push('Spelling check: "with" (no "h" after "w").');
+
+      var foundFigures = requiredFigures.filter(function (f) { return f.regex.test(lower); }).map(function (f) { return f.label; });
+      var missingFigures = requiredFigures.filter(function (f) { return !f.regex.test(lower); }).map(function (f) { return f.label; });
+      var hasOverview = /\b(overall|in general|looking at the|to summarise)\b/.test(lower);
+      var hasComparison = /\b(whereas|while|compared with|compared to|in contrast|outpaced|overtook|overtaking|reversed)\b/.test(lower);
+
+      return {
+        warnings: warnings,
+        foundFigures: foundFigures,
+        missingFigures: missingFigures,
+        hasOverview: hasOverview,
+        hasComparison: hasComparison
+      };
+    }
+
+    function checkStudioEssay() {
+      var text = document.getElementById('studioTextarea').value.trim();
+      var fb = document.getElementById('studioFeedback');
+      fb.className = 'feedback-box show';
+
+      if (!text) {
+        fb.classList.add('fb-error');
+        fb.innerHTML = '<strong>Your writing box is empty.</strong> Write your essay first, then click <strong>Check</strong>.';
+        return;
+      }
+
+      var words = text.split(/\s+/).length;
+      var scan = runDiagnosticScan(text, [
+        { label: '60%', regex: /\b60%\b|\b60 percent\b/ },
+        { label: '40%', regex: /\b40%\b|\b40 percent\b/ },
+        { label: '20%', regex: /\b20%\b|\b20 percent\b/ },
+        { label: '11%', regex: /\b11%\b|\b11 percent\b/ }
+      ]);
+
+      if (scan.warnings.length > 0) {
+        fb.classList.add('fb-error');
+        fb.innerHTML =
+          '<strong>Word Count: ' + words + ' / 150+</strong><br />' +
+          '<strong>Grammar &amp; Unit Alerts:</strong><ul>' +
+          scan.warnings.map(function (w) { return '<li>' + w + '</li>'; }).join('') +
+          '</ul>';
+      } else if (words < 150 || !scan.hasOverview || !scan.hasComparison || scan.foundFigures.length < 3) {
+        fb.classList.add('fb-warning');
+        fb.innerHTML =
+          '<strong>Word Count: ' + words + ' / 150+</strong> — Clean grammar (zero recurring errors detected)!<br />' +
+          '&bull; Overview detected: <strong>' + (scan.hasOverview ? 'Yes' : 'Add "Overall, ..."') + '</strong><br />' +
+          '&bull; Comparison language: <strong>' + (scan.hasComparison ? 'Yes' : 'Add whereas / overtaking / compared with') + '</strong><br />' +
+          '&bull; Key figures reported (' + scan.foundFigures.length + '/4): ' + (scan.foundFigures.join(', ') || 'None yet') +
+          (scan.missingFigures.length ? ' (Missing: ' + scan.missingFigures.join(', ') + ')' : '');
+      } else {
+        fb.classList.add('fb-success');
+        fb.innerHTML =
+          '<strong>&#10003; Strong IELTS Task 1 Essay (' + words + ' words)!</strong> Zero grammar traps detected, clear overview, strong comparisons, and key figures (' + scan.foundFigures.join(', ') + ') included.';
+      }
+    }
+
+    function toggleStudioModel() {
+      document.getElementById('studioModelBox').classList.toggle('show');
+    }
+
+    function resetStudioEssay() {
+      document.getElementById('studioTextarea').value = '';
+      updateWordCount('studioTextarea', 'studioWordCount');
+      var fb = document.getElementById('studioFeedback');
+      fb.className = 'feedback-box';
+      fb.innerHTML = '';
+      document.getElementById('studioModelBox').classList.remove('show');
+    }
+
+    function checkHomework() {
+      var text = document.getElementById('hwTextarea').value.trim();
+      var fb = document.getElementById('hwFeedback');
+      fb.className = 'feedback-box show';
+
+      if (!text) {
+        fb.classList.add('fb-error');
+        fb.innerHTML = '<strong>Homework box is empty.</strong> Write your 150+ word response first, then click <strong>Check</strong>.';
+        return;
+      }
+
+      var words = text.split(/\s+/).length;
+      var scan = runDiagnosticScan(text, [
+        { label: '62%', regex: /\b62%\b|\b62 percent\b/ },
+        { label: '38%', regex: /\b38%\b|\b38 percent\b/ },
+        { label: '24%', regex: /\b24%\b|\b24 percent\b/ },
+        { label: '12%', regex: /\b12%\b|\b12 percent\b/ }
+      ]);
+
+      if (scan.warnings.length > 0) {
+        fb.classList.add('fb-error');
+        fb.innerHTML =
+          '<strong>Word Count: ' + words + ' / 150+</strong><br />' +
+          '<strong>Grammar &amp; Unit Alerts:</strong><ul>' +
+          scan.warnings.map(function (w) { return '<li>' + w + '</li>'; }).join('') +
+          '</ul>';
+      } else if (words < 150 || !scan.hasOverview || !scan.hasComparison || scan.foundFigures.length < 3) {
+        fb.classList.add('fb-warning');
+        fb.innerHTML =
+          '<strong>Word Count: ' + words + ' / 150+</strong> — Clean grammar!<br />' +
+          '&bull; Overview detected: <strong>' + (scan.hasOverview ? 'Yes' : 'Add "Overall, ..."') + '</strong><br />' +
+          '&bull; Comparison language: <strong>' + (scan.hasComparison ? 'Yes' : 'Add whereas / overtaking / compared with') + '</strong><br />' +
+          '&bull; Key figures reported (' + scan.foundFigures.length + '/4): ' + (scan.foundFigures.join(', ') || 'None yet') +
+          (scan.missingFigures.length ? ' (Missing: ' + scan.missingFigures.join(', ') + ')' : '');
+      } else {
+        fb.classList.add('fb-success');
+        fb.innerHTML =
+          '<strong>&#10003; Excellent Homework Submission (' + words + ' words)!</strong> Accurate data (' + scan.foundFigures.join(', ') + '), strong comparisons, and clean grammar.';
+      }
+    }
+
+    function toggleHomeworkModel() {
+      document.getElementById('hwModelBox').classList.toggle('show');
+    }
+
+    function copyHomeworkDraft() {
+      var ta = document.getElementById('hwTextarea');
+      var fb = document.getElementById('hwFeedback');
+      fb.className = 'feedback-box show fb-success';
+      if (!ta.value.trim()) {
+        fb.innerHTML = 'Nothing to copy yet — type your homework draft in the box first.';
+        return;
+      }
+      ta.select();
+      ta.setSelectionRange(0, 99999);
+      try {
+        document.execCommand('copy');
+        fb.innerHTML = '<strong>&#10003; Copied!</strong> Your homework draft is copied to the clipboard.';
+      } catch (err) {
+        fb.innerHTML = 'Select the text in the box and copy it manually.';
+      }
+    }
+
+    function resetHomework() {
+      document.getElementById('hwTextarea').value = '';
+      updateWordCount('hwTextarea', 'hwWordCount');
+      var fb = document.getElementById('hwFeedback');
+      fb.className = 'feedback-box';
+      fb.innerHTML = '';
+      document.getElementById('hwModelBox').classList.remove('show');
+      document.querySelectorAll('#tab-5 input[type="checkbox"]').forEach(function (cb) {
+        cb.checked = false;
+      });
+    }
+
+    /* =====================================================================
+       6. INITIALIZE ALL INTERACTIVE SECTIONS ON WINDOW LOAD
+    ===================================================================== */
+    window.onload = function () {
+      renderCueCards();
+      renderActiveSubtitle();
+      inspectVocab('consumers');
+      renderVocabCards();
+      renderVocabQuiz();
+      renderGrammarClinic();
+      renderTimer();
+    };
+  </script>
+</body>
+</html>
